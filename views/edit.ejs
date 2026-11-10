@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Student</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;padding:40px 24px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f4f6f8;color:#1f2933}
+    .container{max-width:520px;margin:0 auto}
+    h1{font-size:26px;margin:0 0 24px}
+    .card{background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.04);padding:28px}
+    label{display:block;font-size:14px;font-weight:600;margin-bottom:6px;color:#374151}
+    .field{margin-bottom:18px}
+    input{width:100%;padding:12px 14px;font-size:15px;border:1px solid #d2d6dc;border-radius:8px;outline:none;transition:border-color .15s,box-shadow .15s}
+    input:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.15)}
+    .buttons{display:flex;gap:12px;margin-top:24px}
+    button,.btn{padding:12px 20px;font-size:15px;font-weight:500;border:none;border-radius:8px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .15s}
+    .btn-primary{background:#3b82f6;color:#fff}.btn-primary:hover{background:#2563eb}
+    .btn-secondary{background:#fff;color:#374151;border:1px solid #d2d6dc}.btn-secondary:hover{background:#f9fafb}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Edit Student</h1>
+    <div class="card">
+      <form action="/update/<%= student.id %>" method="POST">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" value="<%= student.name %>" required>
+        </div>
+        <div class="field">
+          <label for="course">Course</label>
+          <input type="text" id="course" name="course" value="<%= student.course %>" required>
+        </div>
+        <div class="buttons">
+          <button type="submit" class="btn-primary">Save Changes</button>
+          <a href="/main" class="btn btn-secondary">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
